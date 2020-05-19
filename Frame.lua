@@ -29,10 +29,8 @@ function beginTrackingSunderers()
 	
 	Frame1:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED");
 	
-	getWarriorsInRaid();
-	
+    getWarriorsInRaid();
     clearSundererList();
-	
 	fillSundererList();
 	
 end
