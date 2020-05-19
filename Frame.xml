@@ -1,0 +1,109 @@
+<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="Frame.lua" />
+	<Frame name="Frame1" parent="UIParent" toplevel="true" movable="true" resizable="true" enableMouse="true" enableMouseClicks="true" enableMouseMotion="true">
+		<Size x="156" y="192" />
+		<Anchors>
+			<Anchor point="CENTER" relativeTo="UIParent" />
+		</Anchors>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="11" right="12" top="12" bottom="11" />
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32" />
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="32" />
+			</EdgeSize>
+		</Backdrop>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="sundererOne" inherits="GameFontNormal" text="">
+					<Size x="80" y="20" />
+					<Anchors>
+						<Anchor point="TOPLEFT" x="14" y="-29" />
+					</Anchors>
+				</FontString>
+				<FontString name="sundererTwo" inherits="GameFontNormal" text="">
+					<Size x="80" y="20" />
+					<Anchors>
+						<Anchor point="TOPLEFT" x="14" y="-55" />
+					</Anchors>
+				</FontString>
+				<FontString name="sundererThree" inherits="GameFontNormal" text="">
+					<Size x="80" y="20" />
+					<Anchors>
+						<Anchor point="TOPLEFT" x="14" y="-81" />
+					</Anchors>
+				</FontString>
+				<FontString name="sundererFour" inherits="GameFontNormal" text="">
+					<Size x="80" y="20" />
+					<Anchors>
+						<Anchor point="TOPLEFT" x="14" y="-107" />
+					</Anchors>
+				</FontString>
+				<FontString name="sundererFive" inherits="GameFontNormal" text="">
+					<Size x="80" y="20" />
+					<Anchors>
+						<Anchor point="TOPLEFT" x="14" y="-133" />
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="sunderer" inherits="UIPanelButtonTemplate" enableMouse="true" enableMouseClicks="true" text="Sunderer" registerForClicks="AnyDown">
+				<Size x="75" y="23" />
+				<Anchors>
+					<Anchor point="TOPLEFT" x="28" y="0" />
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						self:RegisterForClicks("LeftButtonUp", "RightButtonDown");
+					</OnLoad>
+					<OnClick>
+						beginTrackingSunderers();
+					</OnClick>
+				</Scripts>
+			</Button>
+			<CheckButton inherits="UICheckButtonTemplate" name ="sundererChkBtnOne" text="CheckButton1">
+				<Anchors>
+					<Anchor point="TOPLEFT" x="90" y="-23" />
+				</Anchors>
+			</CheckButton>
+			<CheckButton inherits="UICheckButtonTemplate" name ="sundererChkBtnTwo" text="CheckButton1">
+				<Anchors>
+					<Anchor point="TOPLEFT" x="90" y="-50" />
+				</Anchors>
+			</CheckButton>
+			<CheckButton inherits="UICheckButtonTemplate" name ="sundererChkBtnThree" text="CheckButton1">
+				<Anchors>
+					<Anchor point="TOPLEFT" x="90" y="-77" />
+				</Anchors>
+			</CheckButton>
+			<CheckButton inherits="UICheckButtonTemplate" name ="sundererChkBtnFour" text="CheckButton1">
+				<Anchors>
+					<Anchor point="TOPLEFT" x="90" y="-104" />
+				</Anchors>
+			</CheckButton>
+			<CheckButton inherits="UICheckButtonTemplate" name ="sundererChkBtnFive" text="CheckButton1">
+				<Anchors>
+					<Anchor point="TOPLEFT" x="90" y="-131" />
+				</Anchors>
+			</CheckButton>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				self:RegisterForDrag("LeftButton");
+			</OnLoad>
+			<OnDragStart>
+				self:StartMoving();
+			</OnDragStart>
+			<OnDragStop>
+				self:StopMovingOrSizing();
+			</OnDragStop>
+			<OnEvent>
+				Combat_OnEvent(self, event, ...);
+			</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>
