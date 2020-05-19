@@ -16,6 +16,7 @@ function SlashCmdList.SUNDERER(msg, ...)
         Frame1:Show();
     elseif (msg == 'hide') then
         Frame1:Hide();
+		Frame1:UnregisterEvent("COMBAT_LOG_EVENT_UNFILTERED");
     else 
         print ("Sunderer: Arguments to /sun or /sunderer: \n Hide - Hide the Sunderer frame. \n Show - Show the Sunderer frame.");
     end
