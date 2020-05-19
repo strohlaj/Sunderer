@@ -23,11 +23,11 @@ end
 
 function beginTrackingSunderers()
     -- Reinitialize the starting tables.
-	warriorTable = {};
-	warriorAuditTable = {};
-	warriorTableCount = 0;	
-	
-	Frame1:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED");
+    warriorTable = {};
+    warriorAuditTable = {};
+    warriorTableCount = 0;	
+    
+    Frame1:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED");
 	
     getWarriorsInRaid();
     clearSundererList();
@@ -77,8 +77,8 @@ function getWarriorsInRaid()
             table.insert(warriorTable, name);
             warriorTableCount = warriorTableCount + 1;
         end
-	end
-	-- For debug - keep in here because I don't want to look this ipairs func up again.
+    end
+    -- For debug - keep in here because I don't want to look this ipairs func up again.
     -- for i,v in ipairs(warriorTable) do print(i,v) end
 end
 -- Monitors combat log to identify if any of the chosen sunderers performed their duty - if they do, checkbox is selected.
