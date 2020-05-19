@@ -72,8 +72,6 @@ function getWarriorsInRaid()
     for i = 40, 1, -1 do
         name, rank, subgroup, level, class, fileName, zone, online, isDead, role, isML = GetRaidRosterInfo(i);
         if (name ~= nil and class == "Warrior" and role ~= "MAINTANK" and online) then
-            print(name);
-            print(role);
             table.insert(warriorTable, name);
             warriorTableCount = warriorTableCount + 1;
         end

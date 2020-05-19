@@ -1,6 +1,7 @@
 ## Title: Sunderer
-## Version: 1.0
-## Author: AaronStrohl
+## Version: 0.1.0
+## Author: RandyBobandy
 ## Interface: 80205
 
 Frame.xml
+Frame.lua
